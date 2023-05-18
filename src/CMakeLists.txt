@@ -1,0 +1,6 @@
+add_subdirectory(cpu)
+add_subdirectory(cl)
+if (${CMAKE_CUDA_COMPILER})
+    enable_language(CUDA)
+    add_subdirectory(cuda)
+endif ()
