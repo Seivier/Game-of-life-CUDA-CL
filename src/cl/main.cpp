@@ -9,9 +9,9 @@
 #include <fstream>
 #include <CL/cl.hpp>
 
-#define BLOCK_SIZE 512
-#define N 5120
-#define M 5120
+//#define BLOCK_SIZE 512
+//#define N 5120
+//#define M 5120
 
 const int ITER = 500;
 using cell = unsigned char;
@@ -82,119 +82,143 @@ void display(vector<cell> data, int m, int n) {
 	cout << "Dead cells: " << m * n - lives << endl;
 }
 
-int main()
-{
-	for (int tries = 0; tries < 1; tries++)
+int simulate(const int N, const int M, const int BLOCK_SIZE, bool if_version) {
+	cl_int err;
+
+	vector<cl::Platform> platforms;
+	cl::Platform::get(&platforms);
+	if (platforms.empty())
 	{
-		cl_int err;
-
-		vector<cl::Platform> platforms;
-		cl::Platform::get(&platforms);
-		if (platforms.empty())
-		{
-			cout << "No platforms found!" << endl;
-			return 1;
-		}
-		cl::Platform platform = platforms[0];
-		cout << "Using platform: " << platform.getInfo<CL_PLATFORM_NAME>() << endl;
-
-		vector<cl::Device> devices;
-		platform.getDevices(CL_DEVICE_TYPE_GPU, &devices);
-		if (devices.empty())
-		{
-			cout << "No devices found!" << endl;
-			return 1;
-		}
-		cl::Device device = devices[0];
-		cout << "Using device: " << device.getInfo<CL_DEVICE_NAME>() << endl;
-
-		cl::Context context(device);
-
-		cl::CommandQueue queue(context, device);
-
-
-		cl::Program iter(context, normSource);
-		cl::Program iter_if(context, ifSource);
-		err = iter.build();
-		if (err != CL_SUCCESS)
-		{
-			cout << "Build error: " << err << endl;
-			cout << iter.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device) << endl;
-			return 1;
-		}
-
-		err = iter_if.build();
-		if (err != CL_SUCCESS)
-		{
-			cout << "Build error: " << err << endl;
-			cout << iter_if.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device) << endl;
-			return 1;
-		}
-
-
-		cl::Kernel kernel(iter, "iteration", &err);
-		if (err != CL_SUCCESS)
-		{
-			cout << "Kernel error: " << err << endl;
-			return 1;
-		}
-
-		vector<cell> in(N * M);
-		vector<cell> out(N * M);
-		cl::Buffer inBuf(context, CL_MEM_READ_WRITE, N * M * sizeof(cell));
-		cl::Buffer outBuf(context, CL_MEM_READ_WRITE, N * M * sizeof(cell));
-
-		// Init
-		auto t_start = chrono::high_resolution_clock::now();
-		random_data(in);
-		auto t_end = chrono::high_resolution_clock::now();
-		auto t_data = chrono::duration_cast<chrono::milliseconds>(t_end - t_start).count();
-
-		cout << "INITIAL STATE:" << endl;
-		display(in, N, M);
-		cout << endl;
-
-		// Copy host to device
-		t_start = chrono::high_resolution_clock::now();
-		err = queue.enqueueWriteBuffer(inBuf, CL_TRUE, 0, N * M * sizeof(cell), in.data());
-		err |= queue.enqueueWriteBuffer(outBuf, CL_TRUE, 0, N * M * sizeof(cell), out.data());
-		queue.finish();
-		t_end = chrono::high_resolution_clock::now();
-		auto t_host_to_device = chrono::duration_cast<chrono::milliseconds>(t_end - t_start).count();
-
-		cl::NDRange globalSize((N * M) / BLOCK_SIZE);
-		cl::NDRange localSize(BLOCK_SIZE);
-
-		// Exec
-		t_start = chrono::high_resolution_clock::now();
-		for (int i = 0; i < ITER; i++)
-		{
-			err = kernel.setArg(i % 2, inBuf);
-			err |= kernel.setArg((i + 1) % 2, outBuf);
-			err |= kernel.setArg(2, N);
-			err |= kernel.setArg(3, M);
-			err = queue.enqueueNDRangeKernel(kernel, cl::NullRange, globalSize, localSize);
-		}
-		queue.finish();
-		t_end = chrono::high_resolution_clock::now();
-		auto t_exec = chrono::duration_cast<chrono::milliseconds>(t_end - t_start).count();
-
-		// Copy device to host
-		t_start = chrono::high_resolution_clock::now();
-		err = queue.enqueueReadBuffer(inBuf, CL_TRUE, 0, N * M * sizeof(cell), in.data());
-		err = queue.enqueueReadBuffer(outBuf, CL_TRUE, 0, N * M * sizeof(cell), out.data());
-		queue.finish();
-		t_end = chrono::high_resolution_clock::now();
-		auto t_device_to_host = chrono::duration_cast<chrono::milliseconds>(t_end - t_start).count();
-
-		cout << "FINAL STATE:" << endl;
-		display(in, N, M);
-		cout << endl;
-
-		cout << "Time to create the data: " << t_data << " ms\n";
-		cout << "Time to copy data from host to device: " << t_host_to_device << " ms\n";
-		cout << "Time to execute the simulation: " << t_exec << " ms\n";
-		cout << "Time to copy data from device to host: " << t_device_to_host << " ms" << endl;
-		cout << "Total time: " << t_data + t_exec + t_device_to_host + t_host_to_device << " ms" << endl;
+		cout << "No platforms found!" << endl;
+		return 1;
 	}
+	cl::Platform platform = platforms[0];
+	cout << "Using platform: " << platform.getInfo<CL_PLATFORM_NAME>() << endl;
+
+	vector<cl::Device> devices;
+	platform.getDevices(CL_DEVICE_TYPE_GPU, &devices);
+	if (devices.empty())
+	{
+		cout << "No devices found!" << endl;
+		return 2;
+	}
+	cl::Device device = devices[0];
+	cout << "Using device: " << device.getInfo<CL_DEVICE_NAME>() << endl;
+
+	cl::Context context(device);
+
+	cl::CommandQueue queue(context, device);
+
+
+	cl::Program iter(context, normSource);
+	cl::Program iter_if(context, ifSource);
+	err = iter.build();
+	if (err != CL_SUCCESS)
+	{
+		cout << "Build error: " << err << endl;
+		cout << iter.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device) << endl;
+		return 3;
+	}
+
+	err = iter_if.build();
+	if (err != CL_SUCCESS)
+	{
+		cout << "Build error: " << err << endl;
+		cout << iter_if.getBuildInfo<CL_PROGRAM_BUILD_LOG>(device) << endl;
+		return 4;
+	}
+
+	cl::Kernel kernel;
+	if (if_version)
+		kernel = cl::Kernel(iter, "iteration", &err);
+	else
+		kernel = cl::Kernel(iter_if, "iteration_if", &err);
+
+	if (err != CL_SUCCESS)
+	{
+		cout << "Kernel error: " << err << endl;
+		return 5;
+	}
+
+	vector<cell> in(N * M);
+	vector<cell> out(N * M);
+	cl::Buffer inBuf(context, CL_MEM_READ_WRITE, N * M * sizeof(cell));
+	cl::Buffer outBuf(context, CL_MEM_READ_WRITE, N * M * sizeof(cell));
+
+	// Init
+	auto t_start = chrono::high_resolution_clock::now();
+	random_data(in);
+	auto t_end = chrono::high_resolution_clock::now();
+	auto t_data = chrono::duration<double, milli>(t_end - t_start).count();
+
+//	cout << "INITIAL STATE:" << endl;
+//	display(in, N, M);
+//	cout << endl;
+
+	// Copy host to device
+	t_start = chrono::high_resolution_clock::now();
+	err = queue.enqueueWriteBuffer(inBuf, CL_TRUE, 0, N * M * sizeof(cell), in.data());
+	err |= queue.enqueueWriteBuffer(outBuf, CL_TRUE, 0, N * M * sizeof(cell), out.data());
+	queue.finish();
+	t_end = chrono::high_resolution_clock::now();
+	auto t_host_to_device = chrono::duration<double, milli>(t_end - t_start).count();
+
+	cl::NDRange globalSize((N * M) / BLOCK_SIZE);
+	cl::NDRange localSize(BLOCK_SIZE);
+
+	// Exec
+	t_start = chrono::high_resolution_clock::now();
+	for (int i = 0; i < ITER; i++)
+	{
+		err = kernel.setArg(i % 2, inBuf);
+		err |= kernel.setArg((i + 1) % 2, outBuf);
+		err |= kernel.setArg(2, N);
+		err |= kernel.setArg(3, M);
+		err = queue.enqueueNDRangeKernel(kernel, cl::NullRange, globalSize, localSize);
+	}
+	queue.finish();
+	t_end = chrono::high_resolution_clock::now();
+	auto t_exec = chrono::duration<double, milli>(t_end - t_start).count();
+
+	// Copy device to host
+	t_start = chrono::high_resolution_clock::now();
+	err = queue.enqueueReadBuffer(inBuf, CL_TRUE, 0, N * M * sizeof(cell), in.data());
+	err = queue.enqueueReadBuffer(outBuf, CL_TRUE, 0, N * M * sizeof(cell), out.data());
+	queue.finish();
+	t_end = chrono::high_resolution_clock::now();
+	auto t_device_to_host = chrono::duration<double, milli>(t_end - t_start).count();
+
+//	cout << "FINAL STATE:" << endl;
+//	display(in, N, M);
+//	cout << endl;
+
+//	cout << "Time to create the data: " << t_data << " ms\n";
+//	cout << "Time to copy data from host to device: " << t_host_to_device << " ms\n";
+//	cout << "Time to execute the simulation: " << t_exec << " ms\n";
+//	cout << "Time to copy data from device to host: " << t_device_to_host << " ms" << endl;
+//	cout << "Total time: " << t_data + t_exec + t_device_to_host + t_host_to_device << " ms" << endl;
+
+	string filename = "cl.csv";
+
+	fstream file;
+	file.open(filename, ios::out | ios::app);
+	file << N << "," << M << "," << BLOCK_SIZE << "," << t_data << "," << t_host_to_device << "," << t_exec << ","
+	<< t_device_to_host << "," << t_data + t_exec + t_device_to_host + t_host_to_device << "," << if_version << endl;
+	file.close();
+
+	display(in, N, M);
+	return 0;
+}
+
+int main(int argc, char *argv[]){
+	if (argc != 5) {
+		cout << "Usage: " << argv[0] << " N M BLOCK_SIZE VERSION" << endl;
+		return 1;
+	}
+
+	int N = atoi(argv[1]);
+	int M = atoi(argv[2]);
+	int BLOCK_SIZE = atoi(argv[3]);
+	bool if_version = atoi(argv[4]);
+	return simulate(N, M, BLOCK_SIZE, if_version);
 }
