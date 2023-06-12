@@ -20,4 +20,4 @@ cmake --build .
 Los ejecutables se encontraran dentro de la carpeta src dentro de build, donde cada habrá una carpeta con cada API y dentro de esta un ejecutable acorde a la configuración (por defecto Debug).
 
 ## Experimentos
-Los experimentos se hicieron con CTest y dentro del CMakeLists.exe de experiement se pueden ver los comandos usados para cada experimento. Para ejecutar los experimentos se debe utilizar Visual Studio ya que son tests. Los resultados de estos tests se guardan dentro de la carpeta experiment/data.
+Los experimentos se hicieron con CTest y dentro del CMakeLists.exe de experiement se pueden ver los comandos usados para cada experimento. Para ejecutar los experimentos se debe utilizar Visual Studio ya que son tests. Los resultados de estos tests se guardan dentro de la carpeta experiment/data. Tambien se puede usar CLion.
