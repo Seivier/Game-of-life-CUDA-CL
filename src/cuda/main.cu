@@ -132,12 +132,12 @@ void simulate(const int N, const int M, const int BLOCK_SIZE, bool if_version) {
 //	cout << "Time to copy data from device to host: " << t_device_to_host << " ms" << endl;
 //	cout << "Total time: " << t_data + t_exec + t_device_to_host + t_host_to_device << " ms" << endl;
 
-	string filename = "cuda.csv";
+	string filename = if_version? "cuda_if.csv" : "cuda.csv";
 
 	fstream file;
 	file.open(filename, ios::out | ios::app);
 	file << N << "," << M << "," << BLOCK_SIZE << "," << t_data << "," << t_host_to_device << "," << t_exec << ","
-		 << t_device_to_host << "," << t_data + t_exec + t_device_to_host + t_host_to_device << "," << if_version << endl;
+		 << t_device_to_host << "," << t_data + t_exec + t_device_to_host + t_host_to_device << endl;
 	file.close();
 
 	display(h_in, N, M);
