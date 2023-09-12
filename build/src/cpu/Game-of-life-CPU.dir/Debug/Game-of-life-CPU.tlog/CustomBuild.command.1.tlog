@@ -1,0 +1,10 @@
+^D:\GAME-OF-LIFE-CUDA-CL\SRC\CPU\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Game-of-life-CUDA-CL -BD:/Game-of-life-CUDA-CL/build --check-stamp-file D:/Game-of-life-CUDA-CL/build/src/cpu/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,5 @@
+# ninja log v5
+4	691	7063227256373637	src/cpu/CMakeFiles/Game-of-life-CPU.dir/main.cpp.obj	4c3564939bd69887
+692	1187	7063227261302981	src/cpu/Game-of-life-CPU.exe	ae42396598621a2e
+3	1001	7063227553772908	src/cpu/CMakeFiles/Game-of-life-CPU.dir/main.cpp.obj	6a9b4f06ce471a04
+1001	1610	7063227559379314	src/cpu/Game-of-life-CPU.exe	3fd8f1484fac7bf9

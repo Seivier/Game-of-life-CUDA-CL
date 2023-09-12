@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CudaCompile Include="..\..\..\src\cuda\main.cu">
+      <Filter>Source Files</Filter>
+    </CudaCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\Game-of-life-CUDA-CL\src\cuda\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{85B7157E-3FFE-3170-8CA3-A0D164EC64F2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

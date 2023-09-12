@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\Game-of-life-CUDA-CL\build\CMakeFiles\27d197b1d1745b4db1f20922039a20e8\RUN_TESTS_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{136CF4A1-E54E-3F56-B8E0-F60E19B6A5C8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

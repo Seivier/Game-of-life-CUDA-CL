@@ -1,0 +1,10 @@
+^D:\GAME-OF-LIFE-CUDA-CL\BUILD\CMAKEFILES\AA0ED100B645A3ADF6A50DF31184AB0C\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SD:/Game-of-life-CUDA-CL -BD:/Game-of-life-CUDA-CL/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Game-of-life-CUDA-CL/build/Game-of-life.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

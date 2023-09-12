@@ -1,0 +1,800 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/cpu",
+					"jsonFile" : "directory-src.cpu-Debug-97f0d364a30ce387874d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cpu",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/cl",
+					"jsonFile" : "directory-src.cl-Debug-76ab3dc5da927e871638.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cl",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/cuda",
+					"jsonFile" : "directory-src.cuda-Debug-8b042e5f880bc751802d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cuda",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "experiment",
+					"jsonFile" : "directory-experiment-Debug-070eed3019e077541252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "experiment"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "Game-of-life",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Debug-1a1670172f39c26f0915.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-Debug-eeec066dda54ca45c6e6.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-Debug-2ae83e6422ccc0503ed8.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Game-of-life-CL::@0ae6195c6457c60d7638",
+					"jsonFile" : "target-Game-of-life-CL-Debug-f29a0c44d1aa1cf0561f.json",
+					"name" : "Game-of-life-CL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Game-of-life-CPU::@9184938e76febcd19f39",
+					"jsonFile" : "target-Game-of-life-CPU-Debug-d310df28bbd16ab7b66a.json",
+					"name" : "Game-of-life-CPU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Game-of-life-CUDA::@7ff92fc98965d9914814",
+					"jsonFile" : "target-Game-of-life-CUDA-Debug-31dad2aa14b6f603bd01.json",
+					"name" : "Game-of-life-CUDA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-Debug-a929e77aede074497a52.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-Debug-0e79723c5bd570aaceaa.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Debug-1935376f082698274346.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-src-Release-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/cpu",
+					"jsonFile" : "directory-src.cpu-Release-97f0d364a30ce387874d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cpu",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/cl",
+					"jsonFile" : "directory-src.cl-Release-76ab3dc5da927e871638.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cl",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/cuda",
+					"jsonFile" : "directory-src.cuda-Release-8b042e5f880bc751802d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cuda",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "experiment",
+					"jsonFile" : "directory-experiment-Release-070eed3019e077541252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "experiment"
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "Game-of-life",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-Release-1a1670172f39c26f0915.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-Release-eeec066dda54ca45c6e6.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-Release-2ae83e6422ccc0503ed8.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Game-of-life-CL::@0ae6195c6457c60d7638",
+					"jsonFile" : "target-Game-of-life-CL-Release-1fe438afbd9cc043425f.json",
+					"name" : "Game-of-life-CL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Game-of-life-CPU::@9184938e76febcd19f39",
+					"jsonFile" : "target-Game-of-life-CPU-Release-3f55dc1514bc97af0a6e.json",
+					"name" : "Game-of-life-CPU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Game-of-life-CUDA::@7ff92fc98965d9914814",
+					"jsonFile" : "target-Game-of-life-CUDA-Release-8be698862e57b9ab6f2e.json",
+					"name" : "Game-of-life-CUDA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-Release-a929e77aede074497a52.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-Release-0e79723c5bd570aaceaa.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-Release-1935376f082698274346.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-MinSizeRel-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-src-MinSizeRel-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/cpu",
+					"jsonFile" : "directory-src.cpu-MinSizeRel-97f0d364a30ce387874d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cpu",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/cl",
+					"jsonFile" : "directory-src.cl-MinSizeRel-76ab3dc5da927e871638.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cl",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/cuda",
+					"jsonFile" : "directory-src.cuda-MinSizeRel-8b042e5f880bc751802d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cuda",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "experiment",
+					"jsonFile" : "directory-experiment-MinSizeRel-070eed3019e077541252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "experiment"
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "Game-of-life",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-MinSizeRel-1a1670172f39c26f0915.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-MinSizeRel-eeec066dda54ca45c6e6.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-MinSizeRel-2ae83e6422ccc0503ed8.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Game-of-life-CL::@0ae6195c6457c60d7638",
+					"jsonFile" : "target-Game-of-life-CL-MinSizeRel-ca2770185261e60fd7de.json",
+					"name" : "Game-of-life-CL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Game-of-life-CPU::@9184938e76febcd19f39",
+					"jsonFile" : "target-Game-of-life-CPU-MinSizeRel-40192252bd2b9379fe33.json",
+					"name" : "Game-of-life-CPU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Game-of-life-CUDA::@7ff92fc98965d9914814",
+					"jsonFile" : "target-Game-of-life-CUDA-MinSizeRel-60c6cee6278efda6f24a.json",
+					"name" : "Game-of-life-CUDA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-MinSizeRel-a929e77aede074497a52.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-MinSizeRel-0e79723c5bd570aaceaa.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-MinSizeRel-1935376f082698274346.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		},
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						5
+					],
+					"jsonFile" : "directory-.-RelWithDebInfo-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						6,
+						7,
+						8
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3,
+						4
+					],
+					"jsonFile" : "directory-src-RelWithDebInfo-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/cpu",
+					"jsonFile" : "directory-src.cpu-RelWithDebInfo-97f0d364a30ce387874d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cpu",
+					"targetIndexes" : 
+					[
+						4
+					]
+				},
+				{
+					"build" : "src/cl",
+					"jsonFile" : "directory-src.cl-RelWithDebInfo-76ab3dc5da927e871638.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cl",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "src/cuda",
+					"jsonFile" : "directory-src.cuda-RelWithDebInfo-8b042e5f880bc751802d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cuda",
+					"targetIndexes" : 
+					[
+						5
+					]
+				},
+				{
+					"build" : "experiment",
+					"jsonFile" : "directory-experiment-RelWithDebInfo-070eed3019e077541252.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "experiment"
+				}
+			],
+			"name" : "RelWithDebInfo",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					],
+					"name" : "Game-of-life",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ALL_BUILD::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ALL_BUILD-RelWithDebInfo-1a1670172f39c26f0915.json",
+					"name" : "ALL_BUILD",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Continuous::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Continuous-RelWithDebInfo-eeec066dda54ca45c6e6.json",
+					"name" : "Continuous",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Experimental::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Experimental-RelWithDebInfo-2ae83e6422ccc0503ed8.json",
+					"name" : "Experimental",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "Game-of-life-CL::@0ae6195c6457c60d7638",
+					"jsonFile" : "target-Game-of-life-CL-RelWithDebInfo-b3b40bf062e1689e4d0d.json",
+					"name" : "Game-of-life-CL",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Game-of-life-CPU::@9184938e76febcd19f39",
+					"jsonFile" : "target-Game-of-life-CPU-RelWithDebInfo-8e9dd2b67c545a67c004.json",
+					"name" : "Game-of-life-CPU",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 4,
+					"id" : "Game-of-life-CUDA::@7ff92fc98965d9914814",
+					"jsonFile" : "target-Game-of-life-CUDA-RelWithDebInfo-7d3d9b4ae8159984f32a.json",
+					"name" : "Game-of-life-CUDA",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Nightly::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Nightly-RelWithDebInfo-a929e77aede074497a52.json",
+					"name" : "Nightly",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "NightlyMemoryCheck::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-NightlyMemoryCheck-RelWithDebInfo-0e79723c5bd570aaceaa.json",
+					"name" : "NightlyMemoryCheck",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ZERO_CHECK::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ZERO_CHECK-RelWithDebInfo-1935376f082698274346.json",
+					"name" : "ZERO_CHECK",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Game-of-life-CUDA-CL/cmake-build-debug-visual-studio",
+		"source" : "D:/Game-of-life-CUDA-CL"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

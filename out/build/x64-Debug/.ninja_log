@@ -1,0 +1,7 @@
+# ninja log v5
+4	899	7063271343067673	src/cpu/CMakeFiles/Game-of-life-CPU.dir/main.cpp.obj	a9554839e76d8c7e
+900	1396	7063271346700765	src/cpu/Game-of-life-CPU.exe	3fd8f1484fac7bf9
+2	236	7092641375977118	build.ninja	f8781e166e6b8831
+27	6721	7063381355346891	src/cuda/CMakeFiles/Game-of-life-CUDA.dir/main.cu.obj	f407237e49faac51
+6722	9700	7063381385234909	CMakeFiles/Game-of-life-CUDA.dir/cmake_device_link.obj	175ca123937ab764
+9700	10183	7063381389327496	src/cuda/Game-of-life-CUDA.exe	6a27a656cd00201b

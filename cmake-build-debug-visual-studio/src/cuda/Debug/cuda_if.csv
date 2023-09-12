@@ -1,0 +1,2 @@
+N,M,Block size, Time to create the data, Time to copy data from host to device, Time to execute kernel, Time to copy data from device to host, Total tim10000,10000,128,8940.74,80.1935,9.5511,3561.93,12592.4
+

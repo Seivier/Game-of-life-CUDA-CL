@@ -1,0 +1,10 @@
+^D:\GAME-OF-LIFE-CUDA-CL\SRC\CL\CMAKELISTS.TXT
+setlocal
+C:\Users\vigb9\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\231.9011.31\bin\cmake\win\x64\bin\cmake.exe -SD:/Game-of-life-CUDA-CL -BD:/Game-of-life-CUDA-CL/cmake-build-debug-visual-studio --check-stamp-file D:/Game-of-life-CUDA-CL/cmake-build-debug-visual-studio/src/cl/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

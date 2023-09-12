@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"jsonFile" : "directory-src-Debug-c94b7c2814d5a21df52c.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/cpu",
+					"jsonFile" : "directory-src.cpu-Debug-97f0d364a30ce387874d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cpu",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src/cl",
+					"jsonFile" : "directory-src.cl-Debug-76ab3dc5da927e871638.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.0"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/cl"
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "Game-of-life",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 2,
+					"id" : "Game-of-life-CPU::@9184938e76febcd19f39",
+					"jsonFile" : "target-Game-of-life-CPU-Debug-7609c333f16e8b38b32f.json",
+					"name" : "Game-of-life-CPU",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/Game-of-life-CUDA-CL/cmake-build-debug",
+		"source" : "D:/Game-of-life-CUDA-CL"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
